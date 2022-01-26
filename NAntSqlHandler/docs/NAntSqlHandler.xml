@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NAntSqlHandler</name>
+    </assembly>
+    <members>
+        <member name="P:NAntSqlHandler.ExecuteNonQuery.Server">
+            <summary>
+            The SQL server to connect to.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQuery.SqlCommand">
+            <summary>
+            The SQL non-query command to execute.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQuery.InitialCatalog">
+            <summary>
+            The inital catalog to connect to.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQuery.UserID">
+            <summary>
+            The user to use to connect to the server when using SQL authentication.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQuery.Password">
+            <summary>
+            The password to use to connect to the server when using SQL authentication.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQuery.IntegratedSecurity">
+            <summary>
+            Enables/disables IntegratedSecurity in the connection string.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQuery.Pooling">
+            <summary>
+            Enables/disables Pooling in the connection string.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQuery.TrustServerCertificate">
+            <summary>
+            TrustServerCertificate bypasses the SQL server certificate check.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQuery.ErrorStops">
+            <summary>
+            Forces the build to fail on error.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQueryScript.Server">
+            <summary>
+            The SQL server to connect to.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQueryScript.SqlScript">
+            <summary>
+            The the path to the SQL non-query script.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQueryScript.InitialCatalog">
+            <summary>
+            The inital catalog to connect to.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQueryScript.UserID">
+            <summary>
+            The user to use to connect to the server when using SQL authentication.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQueryScript.Password">
+            <summary>
+            The password to use to connect to the server when using SQL authentication.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQueryScript.IntegratedSecurity">
+            <summary>
+            Enables/disables IntegratedSecurity in the connection string.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQueryScript.Pooling">
+            <summary>
+            Enables/disables Pooling in the connection string.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQueryScript.TrustServerCertificate">
+            <summary>
+            TrustServerCertificate bypasses the SQL server certificate check.
+            </summary>
+        </member>
+        <member name="P:NAntSqlHandler.ExecuteNonQueryScript.ErrorStops">
+            <summary>
+            Forces the build to fail on error.
+            </summary>
+        </member>
+    </members>
+</doc>
