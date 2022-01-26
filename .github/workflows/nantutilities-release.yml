@@ -28,7 +28,7 @@ jobs:
 
       - name: Upload Package
         id: upload_package
-        uses: actions/upload-artifact@v2.0
+        uses: actions/upload-artifact@v2
         with:
           name: ${{ steps.get_name.outputs.name }}
           path: NAntUtilities/bin/Release/*.nupkg
