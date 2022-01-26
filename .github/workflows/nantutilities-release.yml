@@ -31,4 +31,4 @@ jobs:
         shell: powershell
         run: |
           cd NAntUtilities
-          dotnet nuget push "NAntUtilities/bin/Release/*.nupkg" --source github --skip-duplicate
+          dotnet nuget push ".\bin\Release\*.nupkg" --source github --skip-duplicate
