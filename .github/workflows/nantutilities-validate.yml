@@ -19,3 +19,12 @@ jobs:
         run: |
           cd NAntUtilities
           dotnet pack
+
+      - name: Get Name
+        id: get_name
+        shell: powershell
+        run: |
+          cd NAntUtilities
+          ls
+          $name = (Get-ChildItem .\bin\Release\*.nupkg)[0].Name
+          echo "::set-output name=name::$name"
