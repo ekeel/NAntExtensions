@@ -66,8 +66,8 @@ namespace NAntSqlHandler {
 		/// <summary>
 		/// Forces the build to fail on error.
 		/// </summary>
-		[TaskAttribute("failOnError", Required = false)]
-		public bool FailOnError { get; get; } = true;
+		[TaskAttribute("errorStops", Required = false)]
+		public bool ErrorStops { get; get; } = true;
 
 		protected override void ExecuteTask()
 		{
@@ -94,7 +94,7 @@ namespace NAntSqlHandler {
 		private void logError(Exception ex) {
 			Project.Log(Level.Error, ex.Message);
 
-			if (FailOnError)
+			if (ErrorStops)
 				throw new BuildException(ex.Message, ex);
 		}
 	}
