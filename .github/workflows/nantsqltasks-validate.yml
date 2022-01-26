@@ -1,4 +1,4 @@
-name: Validate NAntSqlHandler
+name: Validate NAntSqlTasks
 
 on:
   push:
@@ -22,5 +22,5 @@ jobs:
       - name: Package
         id: package
         run: |
-          cd NAntSqlHandler
+          cd NAntSqlTasks
           dotnet pack -c Release

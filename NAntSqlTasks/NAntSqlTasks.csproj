@@ -5,13 +5,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <DocumentationFile>docs/NAntSqlHandler.xml</DocumentationFile>
+    <DocumentationFile>docs/NAntSqlTasks.xml</DocumentationFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <DocumentationMarkdown>README.md</DocumentationMarkdown>
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>NAntSqlHandler</PackageId>
+    <PackageId>NAntSqlTasks</PackageId>
     <Version>0.1.1</Version>
     <Authors>ekeel</Authors>
     <RepositoryUrl>https://github.com/ekeel/NAntExtensions</RepositoryUrl>
