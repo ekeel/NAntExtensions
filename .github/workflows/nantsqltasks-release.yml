@@ -1,4 +1,4 @@
-name: Package and Release NAntSqlHandler
+name: Package and Release NAntSqlTasks
 
 on:
   push:
@@ -22,12 +22,12 @@ jobs:
       - name: Package
         id: package
         run: |
-          cd NAntSqlHandler
+          cd NAntSqlTasks
           dotnet pack -c Release
 
       - name: Push Package
         id: push_package
         shell: powershell
         run: |
-          cd NAntSqlHandler
+          cd NAntSqlTasks
           dotnet nuget push ".\bin\Release\*.nupkg" --source github --skip-duplicate

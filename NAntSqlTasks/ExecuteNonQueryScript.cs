@@ -12,9 +12,9 @@ using System.Text;
 using System.Threading.Tasks;
 using NAntUtilities;
 
-namespace NAntSqlHandler {
-	[TaskName("sql.execute.nonquery")]
-	public class ExecuteNonQuery : NAnt.Core.Task {
+namespace NAntSqlTasks {
+	[TaskName("sql.execute.nonquery.script")]
+	public class ExecuteNonQueryScript : NAnt.Core.Task {
 		/// <summary>
 		/// The SQL server to connect to.
 		/// </summary>
@@ -22,10 +22,10 @@ namespace NAntSqlHandler {
 		public string Server { get; set; }
 
 		/// <summary>
-		/// The SQL non-query command to execute.
+		/// The the path to the SQL non-query script.
 		/// </summary>
-		[TaskAttribute("sqlCommand", Required = true)]
-		public string SqlCommand { get; set; }
+		[TaskAttribute("sqlScript", Required = true)]
+		public string SqlScript { get; set; }
 
 		/// <summary>
 		/// The inital catalog to connect to.
@@ -82,7 +82,7 @@ namespace NAntSqlHandler {
 
 				try {
 					sql.InitializeConnection();
-					sql.ExecuteNonQuery(SqlCommand);
+					sql.ExecuteScriptNonQuery(SqlScript);
 				}
 				catch(Exception ex) {
 					logError(ex);
