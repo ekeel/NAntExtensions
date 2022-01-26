@@ -1,0 +1,21 @@
+name: Validate NAntSqlHandler
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Validate:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Package
+        id: package
+        run: |
+          cd NAntSqlHandler
+          dotnet pack -c Release
