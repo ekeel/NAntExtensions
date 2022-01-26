@@ -1,6 +1,6 @@
 name: Validate NAntUtilities
 
-on: [push]
+# on: [push]
 
 jobs:
   Validate:
