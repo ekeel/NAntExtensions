@@ -13,8 +13,11 @@ jobs:
       - name: Setup Nuget Source
         id: setup_nuget_source
         shell: powershell
-        run: dotnet nuget add source --username ${{ secrets.EKEEL_GITHUB_USERNAME }} -${{ secrets.EKEEL_GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ekeel/index.json"
-        
+        env:
+          GH_USERNAME: ${{ secrets.EKEEL_GITHUB_USERNAME }}
+          GH_TOKEN: ${{ secrets.EKEEL_GITHUB_TOKEN }}
+        run: dotnet nuget add source --username "$env:GH_USERNAME" -p "$env:GH_TOKEN" --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ekeel/index.json"
+
       - name: Checkout
         id: checkout
         uses: actions/checkout@v2
