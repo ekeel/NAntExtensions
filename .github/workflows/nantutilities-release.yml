@@ -13,13 +13,22 @@ jobs:
 
       - name: Package
         id: package
+        shell: powershell
         run: |
           cd NAntUtilities
           dotnet pack
 
-      # - name: Upload Package
-      #   id: upload_package
-      #   uses: actions/upload-artifact@v2.0
-      #   with:
-      #     name: NAntUtilities.nupkg
-      #     path: NAntUtilities/bin/Release/*.nupkg
+      - name: Get Name
+        id: get_name
+        shell: powershell
+        run: |
+          cd NAntUtilities
+          $name = (Get-ChildItem .\NAntUtilities\bin\Release\*.nupkg)[0].Name
+          echo "::set-output name=name::$name"
+
+      - name: Upload Package
+        id: upload_package
+        uses: actions/upload-artifact@v2.0
+        with:
+          name: ${{ steps.get_name.outputs.name }}
+          path: NAntUtilities/bin/Release/*.nupkg
