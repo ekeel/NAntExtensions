@@ -2,12 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="NAnt.Core" Version="0.92.0" />
+    <PackageReference Include="NAntUtilities" Version="0.0.1" />
   </ItemGroup>
 
 </Project>
