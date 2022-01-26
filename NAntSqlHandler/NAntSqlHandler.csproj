@@ -4,6 +4,20 @@
     <TargetFramework>net48</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <DocumentationFile>docs/NAntSqlHandler.xml</DocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationMarkdown>README.md</DocumentationMarkdown>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>NAntSqlHandler</PackageId>
+    <Version>0.1.1</Version>
+    <Authors>ekeel</Authors>
+    <RepositoryUrl>https://github.com/ekeel/NAntExtensions</RepositoryUrl>
+    <PackageDescription>This package adds custom NAnt tasks for working with SQL.</PackageDescription>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="NAnt.Core" Version="0.92.0" />
     <PackageReference Include="NAntUtilities" Version="0.0.1" />

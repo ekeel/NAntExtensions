@@ -10,6 +10,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - name: Setup Nuget Source
+        id: setup_nuget_source
+        shell: powershell
+        run: dotnet nuget add source --username "ekeel" -p "${{ secrets.GITHUB_TOKEN }}" --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ekeel/index.json"
+
       - name: Checkout
         id: checkout
         uses: actions/checkout@v2
@@ -19,4 +24,3 @@ jobs:
         run: |
           cd NAntSqlHandler
           dotnet pack -c Release
-          
