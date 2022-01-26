@@ -19,15 +19,13 @@ jobs:
         shell: powershell
         run: |
           cd NAntUtilities
-          dotnet pack
+          dotnet pack -c Release
 
       - name: Get Name
         id: get_name
         shell: powershell
         run: |
-          cd NAntUtilities
-          ls
-          $name = (Get-ChildItem .\bin\Release\*.nupkg)[0].Name
+          $name = (Get-ChildItem .\NAntUtilities\bin\Release\*.nupkg)[0].Name
           echo "::set-output name=name::$name"
 
       - name: Upload Package
