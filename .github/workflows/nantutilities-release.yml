@@ -24,7 +24,7 @@ jobs:
       - name: Setup Nuget Source
         id: setup_nuget_source
         shell: powershell
-        run: dotnet nuget add source --username '${{ secrets.EKEEL_GITHUB_USERNAME }}' -p '${{ secrets.EKEEL_GITHUB_TOKEN }}' --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ekeel/index.json"
+        run: dotnet nuget add source --username "${{ secrets.EKEEL_GITHUB_USERNAME }}" -p "${{ secrets.EKEEL_GITHUB_TOKEN }}" --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ekeel/index.json"
 
       - name: Push Package
         id: push_package
