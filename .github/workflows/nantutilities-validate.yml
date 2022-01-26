@@ -25,6 +25,6 @@ jobs:
         shell: powershell
         run: |
           cd NAntUtilities
-          ls
-          $name = (Get-ChildItem .\bin\Release\*.nupkg)[0].Name
+          ls bin\Release
+          $name = (Get-ChildItem bin\Release\*.nupkg)[0].Name
           echo "::set-output name=name::$name"
