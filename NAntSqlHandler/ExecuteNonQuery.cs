@@ -76,7 +76,6 @@ namespace NAntSqlHandler {
 				sql.InitialCatalog = InitialCatalog;
 				sql.UserID = UserID;
 				sql.Password = Password;
-				sql.Connected = Connected;
 				sql.IntegratedSecurity = IntegratedSecurity;
 				sql.Pooling = Pooling;
 				sql.TrustServerCertificate = TrustServerCertificate;
