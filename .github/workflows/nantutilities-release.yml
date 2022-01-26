@@ -21,26 +21,12 @@ jobs:
           cd NAntUtilities
           dotnet pack -c Release
 
-      - name: Get Name
-        id: get_name
-        shell: powershell
-        run: |
-          $name = (Get-ChildItem .\NAntUtilities\bin\Release\*.nupkg)[0].Name
-          echo "::set-output name=name::$name"
-
       - name: Setup Nuget Source
         id: setup_nuget_source
         shell: powershell
-        run: dotnet nuget add source --username ${{ secrets.EKEEL_GITHUB_USERNAME }} --password ${{ secrets.EKEEL_GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ekeel/index.json"
+        run: dotnet nuget add source --username '${{ secrets.EKEEL_GITHUB_USERNAME }}' --password '${{ secrets.EKEEL_GITHUB_TOKEN }}' --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ekeel/index.json"
 
       - name: Push Package
         id: push_package
         shell: powershell
         run: dotnet nuget push "NAntUtilities/bin/Release/*.nupkg" --source github --skip-duplicate
-
-      # - name: Upload Package
-      #   id: upload_package
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: ${{ steps.get_name.outputs.name }}
-      #     path: NAntUtilities/bin/Release/*.nupkg
