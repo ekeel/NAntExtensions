@@ -67,7 +67,7 @@ namespace NAntSqlHandler {
 		/// Forces the build to fail on error.
 		/// </summary>
 		[TaskAttribute("errorStops", Required = false)]
-		public bool ErrorStops { get; get; } = true;
+		public bool ErrorStops { get; set; } = true;
 
 		protected override void ExecuteTask()
 		{
