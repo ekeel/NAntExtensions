@@ -1,0 +1,33 @@
+name: Package and Release NAntSqlHandler
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  Validate:
+    runs-on: windows-latest
+
+    steps:
+      - name: Setup Nuget Source
+        id: setup_nuget_source
+        shell: powershell
+        run: dotnet nuget add source --username "ekeel" -p "${{ secrets.GITHUB_TOKEN }}" --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ekeel/index.json"
+
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Package
+        id: package
+        run: |
+          cd NAntSqlHandler
+          dotnet pack -c Release
+
+      - name: Push Package
+        id: push_package
+        shell: powershell
+        run: |
+          cd NAntSqlHandler
+          dotnet nuget push ".\bin\Release\*.nupkg" --source github --skip-duplicate
