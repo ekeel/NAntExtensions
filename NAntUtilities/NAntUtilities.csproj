@@ -5,10 +5,9 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <DocumentationFile>docs/xml/NAntUtilities.xml</DocumentationFile>
+    <DocumentationFile>docs/NAntUtilities.xml</DocumentationFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <DocumentationMarkdown>docs/NAntUtilities.md</DocumentationMarkdown>
-    <VsxmdAutoDeleteXml>True</VsxmdAutoDeleteXml>
+    <DocumentationMarkdown>README.md</DocumentationMarkdown>
   </PropertyGroup>
 
   <PropertyGroup>

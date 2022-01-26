@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NAntUtilities</name>
+    </assembly>
+    <members>
+        <member name="T:NAntUtilities.Sql">
+            <summary>
+            This class provides methods for executing SQL commands and queries.
+            </summary>
+            <remarks>
+            Implements <see cref="T:System.IDisposable">IDisposable</see>
+            </remarks>
+            <example>
+            <code>
+            using (var sql = new NAntUtilities.Sql()) {
+            	sql.Server = "localhost";
+            	sql.InitializeConnection();
+            	sql.ExecuteNonQuery("INSERT INTO ...");
+            }
+            </code>
+            </example>
+        </member>
+        <member name="F:NAntUtilities.Sql.disposed">
+            <summary>
+            Has been disposed.
+            </summary>
+        </member>
+        <member name="M:NAntUtilities.Sql.Finalize">
+            <summary>
+            Call dispose without disposing properly.
+            </summary>
+        </member>
+        <member name="M:NAntUtilities.Sql.Dispose">
+            <summary>
+            Dispose all managed resources.
+            </summary>
+        </member>
+        <member name="M:NAntUtilities.Sql.Dispose(System.Boolean)">
+            <summary>
+            Dispose all managed resources.
+            </summary>
+        </member>
+        <member name="P:NAntUtilities.Sql.Server">
+            <summary>
+            The SQL server to connect to.
+            </summary>
+        </member>
+        <member name="P:NAntUtilities.Sql.InitialCatalog">
+            <summary>
+            The inital catalog to connect to.
+            </summary>
+        </member>
+        <member name="P:NAntUtilities.Sql.UserID">
+            <summary>
+            The user to use to connect to the server when using SQL authentication.
+            </summary>
+        </member>
+        <member name="P:NAntUtilities.Sql.Password">
+            <summary>
+            The password to use to connect to the server when using SQL authentication.
+            </summary>
+        </member>
+        <member name="P:NAntUtilities.Sql.Connected">
+            <summary>
+            The connection state of the sql connection and server connection.
+            </summary>
+        </member>
+        <member name="P:NAntUtilities.Sql.IntegratedSecurity">
+            <summary>
+            Enables/disables IntegratedSecurity in the connection string.
+            </summary>
+        </member>
+        <member name="P:NAntUtilities.Sql.Pooling">
+            <summary>
+            Enables/disables Pooling in the connection string.
+            </summary>
+        </member>
+        <member name="P:NAntUtilities.Sql.TrustServerCertificate">
+            <summary>
+            TrustServerCertificate bypasses the SQL server certificate check.
+            </summary>
+        </member>
+        <member name="F:NAntUtilities.Sql.connected">
+            <summary>
+            The connection state of the sql connection and server connection.
+            </summary>
+        </member>
+        <member name="F:NAntUtilities.Sql.connectionString">
+            <summary>
+            The generated connection string based on the class parameters.
+            </summary>
+        </member>
+        <member name="F:NAntUtilities.Sql.server">
+            <summary>
+            The server connection object.
+            </summary>
+        </member>
+        <member name="F:NAntUtilities.Sql.sqlConnection">
+            <summary>
+            The sql connection object.
+            </summary>
+        </member>
+        <member name="M:NAntUtilities.Sql.GenerateConnectionString">
+            <summary>
+            Generate a SQL connection string based on the class parameters.
+            </summary>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:NAntUtilities.Sql.InitializeConnection">
+            <summary>
+            Create the SQL server connections.
+            </summary>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:NAntUtilities.Sql.ExecuteNonQuery(System.String)">
+            <summary>
+            Execute a non-query SQL command.
+            </summary>
+            <param name="command">The SQL command to execute.</param>
+        </member>
+        <member name="M:NAntUtilities.Sql.ExecuteScriptNonQuery(System.String)">
+            <summary>
+            Execute a non-query SQL command from a SQL script file.
+            </summary>
+            <param name="scriptPath">The path to the SQL script.</param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.PathTooLongException"></exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+            <exception cref="T:System.UnauthorizedAccessException"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.Security.SecurityException"></exception>
+        </member>
+        <member name="M:NAntUtilities.Sql.ExecuteQuery(System.String)">
+            <summary>
+            Execute a SQL query.
+            </summary>
+            <param name="query">The SQL query to execute.</param>
+            <returns>IDataRecord[] containing the returned records.</returns>
+            <exception cref="T:Microsoft.Data.SqlClient.SqlException"></exception>
+        </member>
+        <member name="M:NAntUtilities.Sql.ExecuteScriptQuery(System.String)">
+            <summary>
+            Execute a SQL query from a SQL script file.
+            </summary>
+            <param name="scriptPath"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.PathTooLongException"></exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+            <exception cref="T:System.UnauthorizedAccessException"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.Security.SecurityException"></exception>
+        </member>
+    </members>
+</doc>
