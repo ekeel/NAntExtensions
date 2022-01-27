@@ -1,0 +1,51 @@
+name: Validate NAntExtensions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validatenantutils:
+    name: Validate NAntUtilities
+    runs-on: windows-latest
+    if: "!contains(github.event.head_commit.message, '[no ci]')"
+
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Package
+        id: package
+        run: |
+          cd NAntUtilities
+          dotnet pack -c Release
+
+      - name: Get Name
+        id: get_name
+        shell: powershell
+        run: |
+          $name = (Get-ChildItem .\NAntUtilities\bin\Release\*.nupkg)[0].Name
+          echo "::set-output name=name::$name"
+
+  validatenantsqltasks:
+    name: Validate NAntSqlTasks
+    runs-on: windows-latest
+    if: "!contains(github.event.head_commit.message, '[no ci]')"
+
+    steps:
+      - name: Setup Nuget Source
+        id: setup_nuget_source
+        shell: powershell
+        run: dotnet nuget add source --username "ekeel" -p "${{ secrets.GITHUB_TOKEN }}" --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ekeel/index.json"
+
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Package
+        id: package
+        run: |
+          cd NAntSqlTasks
+          dotnet pack -c Release
