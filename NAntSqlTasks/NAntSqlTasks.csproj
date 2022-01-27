@@ -12,10 +12,11 @@
 
   <PropertyGroup>
     <PackageId>NAntSqlTasks</PackageId>
-    <Version>0.1.5</Version>
+    <Version>0.1.6</Version>
     <Authors>ekeel</Authors>
     <RepositoryUrl>https://github.com/ekeel/NAntExtensions</RepositoryUrl>
     <PackageDescription>This package adds custom NAnt tasks for working with SQL.</PackageDescription>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
   </PropertyGroup>
 
   <ItemGroup>
