@@ -12,7 +12,7 @@
 
   <PropertyGroup>
     <PackageId>NAntSqlTasks</PackageId>
-    <Version>0.1.3</Version>
+    <Version>0.1.4</Version>
     <Authors>ekeel</Authors>
     <RepositoryUrl>https://github.com/ekeel/NAntExtensions</RepositoryUrl>
     <PackageDescription>This package adds custom NAnt tasks for working with SQL.</PackageDescription>
@@ -24,12 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="bin/$(Configuration)/net48/*.*" copyToOutput="true">
+    <Content Include="bin/$(Configuration)/net48/*.dll" copyToOutput="true">
       <IncludeInPackage>true</IncludeInPackage>
       <CopyToOutput>true</CopyToOutput>
       <BuildAction>Content</BuildAction>
-      <copyToOutput>true</copyToOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
 
