@@ -9,7 +9,7 @@ jobs:
   prnantutilities:
     name: Pack/Release NAntUtilities
     runs-on: windows-latest
-    if: "!contains(github.event.head_commit.message, '[no ci]')"
+    if: "!contains(github.event.head_commit.message, '[no ci]') && !contains(github.event.head_commit.message, '[no utilities]')"
 
     steps:
       - name: Setup Nuget Source
@@ -38,7 +38,7 @@ jobs:
   prnantsqltasks:
     name: Pack/Release NAntSqlTasks
     runs-on: windows-latest
-    if: "!contains(github.event.head_commit.message, '[no ci]')"
+    if: "!contains(github.event.head_commit.message, '[no ci]') && !contains(github.event.head_commit.message, '[no sqltasks]')"
 
     steps:
       - name: Setup Nuget Source
