@@ -24,11 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="bin/$(Configuration)/net48/*.dll" copyToOutput="true">
-      <IncludeInPackage>true</IncludeInPackage>
-      <CopyToOutput>true</CopyToOutput>
-      <BuildAction>Content</BuildAction>
-      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    <Content Include="bin/$(Configuration)/net48/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/">
+      <Pack>True</Pack>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
     </Content>
   </ItemGroup>
 
