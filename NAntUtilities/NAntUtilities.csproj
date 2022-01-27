@@ -12,7 +12,7 @@
 
   <PropertyGroup>
     <PackageId>NAntUtilities</PackageId>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <Authors>ekeel</Authors>
     <RepositoryUrl>https://github.com/ekeel/NAntExtensions</RepositoryUrl>
     <PackageDescription>This package adds functions for custom NAnt tasks.</PackageDescription>
