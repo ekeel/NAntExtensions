@@ -6,7 +6,7 @@ on:
       - release
 
 jobs:
-  Validate:
+  PackageRelease:
     runs-on: windows-latest
 
     steps:
