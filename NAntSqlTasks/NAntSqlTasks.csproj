@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <PackageReference Include="NAnt.Core" Version="0.92.0" />
-    <PackageReference Include="NAntUtilities" Version="0.1.1" />
+    <PackageReference Include="NAntUtilities" Version="0.1.2" />
   </ItemGroup>
 
 </Project>

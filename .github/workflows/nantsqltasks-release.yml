@@ -8,6 +8,7 @@ on:
 jobs:
   PackageRelease:
     runs-on: windows-latest
+    if: "contains(github.event.head_commit.message, '[NAntSqlTasks]')"
 
     steps:
       - name: Setup Nuget Source
