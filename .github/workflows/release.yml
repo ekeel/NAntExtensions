@@ -77,10 +77,13 @@ jobs:
           cd NAntSqlTasks
           dotnet pack -c Release
 
+      - name: Install jfrog
+        id: install_jfrog
+        uses: jfrog/setup-jfrog@v2
+
       - name: Push Package
         id: push_package
         shell: powershell
-        uses: jfrog/setup-jfrog@v2
         run: |
           cd .\NAntUtilities\bin\Release
           $nugetPackage = Get-Item "*.nupkg" | select -First 1
