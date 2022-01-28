@@ -5,6 +5,12 @@ on:
     branches:
       - release
 
+  workflow_dispatch:
+    inputs:
+      tasks:
+        description: 'A placeholder'
+        required: true
+
 jobs:
   prnantutilities:
     name: Pack/Release NAntUtilities
