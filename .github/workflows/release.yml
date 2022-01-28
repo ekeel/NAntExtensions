@@ -36,7 +36,7 @@ jobs:
 
       - name: Install jfrog
         id: install_jfrog
-        uses: jfrog/setup-jfrog@v2
+        uses: jfrog/setup-jfrog-cli@v2
 
       - name: Push Package
         id: push_package
@@ -82,7 +82,7 @@ jobs:
 
       - name: Install jfrog
         id: install_jfrog
-        uses: jfrog/setup-jfrog@v2
+        uses: jfrog/setup-jfrog-cli@v2
 
       - name: Push Package
         id: push_package
