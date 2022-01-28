@@ -22,18 +22,12 @@
   <ItemGroup>
     <PackageReference Include="NAnt.Core" Version="0.92.0" />
     <PackageReference Include="NAntUtilities" Version="0.1.2" />
-
-    <!-- <Content Include="bin/$(Configuration)/net48/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/">
-      <Pack>True</Pack>
-      <PackageCopyToOutput>true</PackageCopyToOutput>
-    </Content> -->
   </ItemGroup>
 
-  <Target Name="GetPackageFiles">
+  <!-- <Target Name="GetPackageFiles">
     <ItemGroup>
-      <BuildOutputInPackage Include="bin/$(Configuration)/net48/*.dll">
-      </BuildOutputInPackage>
+      <BuildOutputInPackage Include="bin/$(Configuration)/net48/*.dll" />
     </ItemGroup>
-  </Target>
+  </Target> -->
 
 </Project>
