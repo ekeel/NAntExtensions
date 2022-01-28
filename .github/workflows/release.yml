@@ -98,4 +98,3 @@ jobs:
       #   run: |
       #     cd NAntSqlTasks
       #     dotnet nuget push ".\bin\Release\*.nupkg" --source github --skip-duplicate
-          
