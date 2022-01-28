@@ -44,7 +44,7 @@ jobs:
         run: |
           cd .\NAntUtilities\bin\Release
           $nugetPackage = Get-Item "*.nupkg" | select -First 1
-          jfrog rt u $($nugetPackage.Name) ekeel-nuget --url='https://ekeel.jfrog.io/artifactory' --user ${{ secrets.JFROG_USERNAME }} --password ${{ secrets.JFROG_PASSWORD }}
+          jfrog rt u $($nugetPackage.Name) ekeel-nuget --url='https://ekeel.jfrog.io/artifactory' --user '${{ secrets.JFROG_USERNAME }}' --password '${{ secrets.JFROG_PASSWORD }}'
 
       # - name: Push Package
       #   id: push_package
