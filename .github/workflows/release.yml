@@ -37,9 +37,18 @@ jobs:
       - name: Push Package
         id: push_package
         shell: powershell
+        uses: jfrog/setup-jfrog@v2
         run: |
-          cd NAntUtilities
-          dotnet nuget push ".\bin\Release\*.nupkg" --source github --skip-duplicate
+          cd .\NAntUtilities\bin\Release
+          $nugetPackage = Get-Item "*.nupkg" | select -First 1
+          jfrog rt u $($nugetPackage.Name) ekeel-nuget --url='https://ekeel.jfrog.io/artifactory' --user ${{ secrets.JFROG_USERNAME }} --password ${{ JFROG_PASSWORD }}
+
+      # - name: Push Package
+      #   id: push_package
+      #   shell: powershell
+      #   run: |
+      #     cd NAntUtilities
+      #     dotnet nuget push ".\bin\Release\*.nupkg" --source github --skip-duplicate
   
   prnantsqltasks:
     name: Pack/Release NAntSqlTasks
@@ -71,7 +80,16 @@ jobs:
       - name: Push Package
         id: push_package
         shell: powershell
+        uses: jfrog/setup-jfrog@v2
         run: |
-          cd NAntSqlTasks
-          dotnet nuget push ".\bin\Release\*.nupkg" --source github --skip-duplicate
+          cd .\NAntUtilities\bin\Release
+          $nugetPackage = Get-Item "*.nupkg" | select -First 1
+          jfrog rt u $($nugetPackage.Name) ekeel-nuget --url='https://ekeel.jfrog.io/artifactory' --user ${{ secrets.JFROG_USERNAME }} --password ${{ secrets.JFROG_PASSWORD }}
+
+      # - name: Push Package
+      #   id: push_package
+      #   shell: powershell
+      #   run: |
+      #     cd NAntSqlTasks
+      #     dotnet nuget push ".\bin\Release\*.nupkg" --source github --skip-duplicate
           
