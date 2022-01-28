@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 using NAntUtilities;
 
 namespace NAntSqlTasks {
+	/// <summary>
+	/// Task to execute a non-query SQL command that is read from a SQL script file.
+	/// </summary>
 	[TaskName("sql.execute.nonquery.script")]
 	public class ExecuteNonQueryScript : NAnt.Core.Task {
 		/// <summary>

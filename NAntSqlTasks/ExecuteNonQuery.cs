@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 using NAntUtilities;
 
 namespace NAntSqlTasks {
+	/// <summary>
+	/// Task to execute a non-query SQL command.
+	/// </summary>
 	[TaskName("sql.execute.nonquery")]
 	public class ExecuteNonQuery : NAnt.Core.Task {
 		/// <summary>

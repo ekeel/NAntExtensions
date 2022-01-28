@@ -4,6 +4,11 @@
         <name>NAntSqlTasks</name>
     </assembly>
     <members>
+        <member name="T:NAntSqlTasks.ExecuteNonQuery">
+            <summary>
+            Task to execute a non-query SQL command.
+            </summary>
+        </member>
         <member name="P:NAntSqlTasks.ExecuteNonQuery.Server">
             <summary>
             The SQL server to connect to.
@@ -47,6 +52,11 @@
         <member name="P:NAntSqlTasks.ExecuteNonQuery.ErrorStops">
             <summary>
             Forces the build to fail on error.
+            </summary>
+        </member>
+        <member name="T:NAntSqlTasks.ExecuteNonQueryScript">
+            <summary>
+            Task to execute a non-query SQL command that is read from a SQL script file.
             </summary>
         </member>
         <member name="P:NAntSqlTasks.ExecuteNonQueryScript.Server">
