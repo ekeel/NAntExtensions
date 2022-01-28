@@ -12,10 +12,16 @@
 
   <PropertyGroup>
     <PackageId>NAntSqlTasks</PackageId>
-    <Version>0.1.5</Version>
+    <Version>0.1.8</Version>
     <Authors>ekeel</Authors>
+    <Copyright>Copyright (c) 2022 ekeel</Copyright>
     <RepositoryUrl>https://github.com/ekeel/NAntExtensions</RepositoryUrl>
     <PackageDescription>This package adds custom NAnt tasks for working with SQL.</PackageDescription>
+
+    <!-- 
+      Enable to copy dependency DLLs to package.
+     -->
+    <!-- <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);GetPackageFiles</TargetsForTfmSpecificBuildOutput> -->
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,11 +29,13 @@
     <PackageReference Include="NAntUtilities" Version="0.1.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="bin/$(Configuration)/net48/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)/">
-      <Pack>True</Pack>
-      <PackageCopyToOutput>true</PackageCopyToOutput>
-    </Content>
-  </ItemGroup>
+  <!-- 
+      Enable to copy dependency DLLs to package.
+     -->
+    <!-- <Target Name="GetPackageFiles">
+    <ItemGroup>
+      <BuildOutputInPackage Include="bin/$(Configuration)/net48/*.dll" />
+    </ItemGroup>
+  </Target> -->
 
 </Project>
