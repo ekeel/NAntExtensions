@@ -77,9 +77,7 @@ jobs:
       - name: Configure Nuget
         id: configure_nuget
         shell: powershell
-        run: |
-          dotnet nuget add source --username ${{ secrets.JFROG_USERNAME }} -p ${{ secrets.JFROG_PASSWORD }} --name ekeelJFrog "https://ekeel.jfrog.io/artifactory/api/nuget/v3/ekeel-nuget"
-          dotnet nuget add source --name virtual.nuget.org "https://ekeel.jfrog.io/artifactory/api/nuget/v3/nuget.org"
+        run: dotnet nuget add source --username ${{ secrets.JFROG_USERNAME }} -p ${{ secrets.JFROG_PASSWORD }} --name ekeelJFrog "https://ekeel.jfrog.io/artifactory/api/nuget/v3/ekeel-nuget"
 
       - name: Package
         id: package
