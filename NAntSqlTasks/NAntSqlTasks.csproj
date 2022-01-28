@@ -12,7 +12,7 @@
 
   <PropertyGroup>
     <PackageId>NAntSqlTasks</PackageId>
-    <Version>0.1.4</Version>
+    <Version>0.1.5</Version>
     <Authors>ekeel</Authors>
     <Copyright>Copyright (c) 2022 ekeel</Copyright>
     <RepositoryUrl>https://github.com/ekeel/NAntExtensions</RepositoryUrl>
@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="NAnt.Core" Version="0.92.0" />
-    <PackageReference Include="NAntUtilities" Version="0.1.2" />
+    <PackageReference Include="NAntUtilities" Version="0.1.5" />
   </ItemGroup>
 
   <ItemGroup>

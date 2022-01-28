@@ -18,20 +18,9 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[no ci]') && !contains(github.event.head_commit.message, '[no utilities]')"
 
     steps:
-      # - name: Setup Nuget Source
-      #   id: setup_nuget_source
-      #   shell: powershell
-      #   run: dotnet nuget add source --username "ekeel" -p "${{ secrets.GITHUB_TOKEN }}" --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ekeel/index.json"
-
       - name: Checkout
         id: checkout
         uses: actions/checkout@v2
-
-      - name: Install .NET 6
-        id: install_dotnet6
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 6.0.x
 
       - name: Package
         id: package
@@ -51,13 +40,6 @@ jobs:
           cd .\NAntUtilities\bin\Release
           $nugetPackage = Get-Item "*.nupkg" | select -First 1
           jfrog rt u $($nugetPackage.Name) ekeel-nuget --url='https://ekeel.jfrog.io/artifactory' --user "${{ secrets.JFROG_USERNAME }}" --password "${{ secrets.JFROG_PASSWORD }}"
-
-      # - name: Push Package
-      #   id: push_package
-      #   shell: powershell
-      #   run: |
-      #     cd NAntUtilities
-      #     dotnet nuget push ".\bin\Release\*.nupkg" --source github --skip-duplicate
   
   prnantsqltasks:
     name: Pack/Release NAntSqlTasks
@@ -65,20 +47,9 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[no ci]') && !contains(github.event.head_commit.message, '[no sqltasks]')"
 
     steps:
-      # - name: Setup Nuget Source
-      #   id: setup_nuget_source
-      #   shell: powershell
-      #   run: dotnet nuget add source --username "ekeel" -p "${{ secrets.GITHUB_TOKEN }}" --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ekeel/index.json"
-
       - name: Checkout
         id: checkout
         uses: actions/checkout@v2
-
-      - name: Install .NET 6
-        id: install_dotnet6
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: 6.0.x
 
       - name: Configure Nuget
         id: configure_nuget
@@ -102,10 +73,3 @@ jobs:
           cd .\NAntSqlTasks\bin\Release
           $nugetPackage = Get-Item "*.nupkg" | select -First 1
           jfrog rt u $($nugetPackage.Name) ekeel-nuget --url='https://ekeel.jfrog.io/artifactory' --user ${{ secrets.JFROG_USERNAME }} --password ${{ secrets.JFROG_PASSWORD }}
-
-      # - name: Push Package
-      #   id: push_package
-      #   shell: powershell
-      #   run: |
-      #     cd NAntSqlTasks
-      #     dotnet nuget push ".\bin\Release\*.nupkg" --source github --skip-duplicate
