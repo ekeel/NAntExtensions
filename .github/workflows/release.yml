@@ -8,7 +8,7 @@ on:
 jobs:
   prnantutilities:
     name: Pack/Release NAntUtilities
-    runs-on: windows-latest
+    runs-on: self-hosted
     if: "!contains(github.event.head_commit.message, '[no ci]') && !contains(github.event.head_commit.message, '[no utilities]')"
 
     steps:
@@ -77,7 +77,7 @@ jobs:
       - name: Configure Nuget
         id: configure_nuget
         shell: powershell
-        run: dotnet nuget add source --username ${{ secrets.JFROG_USERNAME }} -p ${{ secrets.JFROG_PASSWORD }} --name ekeelJFrog "https://ekeel.jfrog.io/artifactory/api/nuget/v3/ekeel-nuget"
+        run: dotnet nuget add source --username ${{ secrets.JFROG_USERNAME }} -p ${{ secrets.JFROG_PASSWORD }} --name ekeel.jfrog.io "https://ekeel.jfrog.io/artifactory/api/nuget/v3/ekeel-nuget"
 
       - name: Package
         id: package
